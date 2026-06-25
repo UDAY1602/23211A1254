@@ -1,5 +1,5 @@
-const LogApi = import.meta.env.LogApi;
-const token = import.meta.env.token;
+const LogApi=import.meta.env.VITE_LOG_API;
+const token=import.meta.env.VITE_TOKEN;
 
 export async function Log(stack, level, packageName, message) {
   try {
@@ -16,7 +16,7 @@ export async function Log(stack, level, packageName, message) {
         message,
       }),
     });
-  } catch (err) {
-    console.log("Log failed");
+  } catch (error) {
+    console.log("Logging failed");
   }
 }
